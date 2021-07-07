@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red {color: red;}
+    </style>
+</head>
+<body>
+    <input type="text" name="name" id="name_input" value='Xxxx'>
+    <input type="text" name="name" id="name_input2">
+    <script>
+    
+        function compareValue(element, value){
+            element.value = value
+            let oldValue = element.value
+            element.addEventListener('input',function(){
+                let newValue = this.value
+                if(oldValue !== newValue){
+                    element.classList.add('red')
+                }else{
+                    element.classList.remove('red')
+                }
+            })
+        }
+        compareValue(document.querySelector('#name_input'), 'Xxxx')
+        compareValue(document.querySelector('#name_input2'), 'World')
+    
+
+        // name_input.addEventListener('input', function() {
+        //     const isChanged = this.value != this.('value');
+        //     this.classList.toggle('red', isChanged);
+        // });
+    </script>
+</body>
+</html>
